@@ -1,0 +1,14 @@
+Started on Nov 14, 2015 10:16:00 PM
+Using strategy: Default
+[poll] Last Built Revision: Revision 6ba0da4bd78d694a049ef3343cae06fd994ca01c (origin/master)
+using .gitcredentials to set credentials
+ > git --version # timeout=10
+ > git init /tmp/hudson8114905966521762782tmp # timeout=10
+ > git config --local credential.username bobkubista # timeout=10
+ > git config --local credential.helper store --file=/tmp/git169038834019410175.credentials # timeout=10
+ > git -c core.askpass=true ls-remote -h https://github.com/bobkubista/examples.git # timeout=10
+ > git config --local --remove-section credential # timeout=10
+Found 1 remote heads on https://github.com/bobkubista/examples.git
+[poll] Latest remote head revision on refs/heads/master is: 6ba0da4bd78d694a049ef3343cae06fd994ca01c - already built by 7
+Done. Took 0.93 sec
+No changes

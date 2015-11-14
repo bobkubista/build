@@ -1,0 +1,39 @@
+Started by timer
+Building in workspace /var/lib/jenkins/main
+[WS-CLEANUP] Deleting project workspace...
+[WS-CLEANUP] Done
+Cloning the remote Git repository
+Cloning repository https://github.com/bobkubista/examples.git
+ > git init /var/lib/jenkins/main # timeout=10
+Fetching upstream changes from https://github.com/bobkubista/examples.git
+ > git --version # timeout=10
+using .gitcredentials to set credentials
+ > git config --local credential.username bobkubista # timeout=10
+ > git config --local credential.helper store --file=/tmp/git6198947975918036413.credentials # timeout=10
+ > git -c core.askpass=true fetch --tags --progress https://github.com/bobkubista/examples.git +refs/heads/*:refs/remotes/origin/*
+ > git config --local --remove-section credential # timeout=10
+ > git config remote.origin.url https://github.com/bobkubista/examples.git # timeout=10
+ > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git config remote.origin.url https://github.com/bobkubista/examples.git # timeout=10
+Fetching upstream changes from https://github.com/bobkubista/examples.git
+using .gitcredentials to set credentials
+ > git config --local credential.username bobkubista # timeout=10
+ > git config --local credential.helper store --file=/tmp/git3926220576654705661.credentials # timeout=10
+ > git -c core.askpass=true fetch --tags --progress https://github.com/bobkubista/examples.git +refs/heads/*:refs/remotes/origin/*
+ > git config --local --remove-section credential # timeout=10
+ > git rev-parse origin/master^{commit} # timeout=10
+Checking out Revision 6ba0da4bd78d694a049ef3343cae06fd994ca01c (origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 6ba0da4bd78d694a049ef3343cae06fd994ca01c
+ > git rev-list 6ba0da4bd78d694a049ef3343cae06fd994ca01c # timeout=10
+Notifying upstream projects of job completion
+[ci-game] evaluating rule: Build result
+[ci-game] scored: 1.0
+[ci-game] evaluating rule: Increased number of passed tests
+[ci-game] evaluating rule: Decreased number of passed tests
+[ci-game] evaluating rule: Increased number of failed tests
+[ci-game] evaluating rule: Decreased number of failed tests
+[ci-game] evaluating rule: Increased number of skipped tests
+[ci-game] evaluating rule: Decreased number of skipped tests
+[ci-game] evaluating rule: Changed number of checkstyle warnings
+Finished: SUCCESS

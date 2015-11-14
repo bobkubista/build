@@ -35,9 +35,9 @@
   </syncBranchesTrigger>
   <allowAnonymousSync>false</allowAnonymousSync>
   <scmSource class="jenkins.plugins.git.GitSCMSource" plugin="git@2.4.0">
-    <id>818977b4-8325-47d7-ba21-1f25841908cd</id>
+    <id>ab143c3d-ed75-4c7c-9d0e-10389ab024d9</id>
     <remote>https://github.com/bobkubista/examples.git</remote>
-    <credentialsId>a294facf-26b3-4cbe-a1ff-d49d0d8778e6</credentialsId>
+    <credentialsId>85046183-d155-4bb7-b1c6-99f78b6b3d86</credentialsId>
     <includes>*</includes>
     <excludes></excludes>
     <ignoreOnPushNotifications>false</ignoreOnPushNotifications>
