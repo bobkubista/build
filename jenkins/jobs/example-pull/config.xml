@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<maven-multi-branch-project plugin="multi-branch-project-plugin@0.3">
+  <actions/>
+  <description></description>
+  <views class="java.util.concurrent.CopyOnWriteArrayList">
+    <branch-list-view>
+      <owner class="maven-multi-branch-project" reference="../../.."/>
+      <name>All</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <properties class="hudson.model.View$PropertyList"/>
+      <jobNames>
+        <comparator class="hudson.util.CaseInsensitiveComparator"/>
+      </jobNames>
+      <jobFilters/>
+      <columns>
+        <hudson.views.StatusColumn/>
+        <hudson.views.WeatherColumn/>
+        <hudson.views.JobColumn/>
+        <hudson.views.LastSuccessColumn/>
+        <hudson.views.LastFailureColumn/>
+        <hudson.views.LastDurationColumn/>
+        <hudson.views.BuildButtonColumn/>
+        <jenkins.plugins.emmacoveragecolumn.EmmaColumn plugin="emmacoveragecolumn@0.0.4"/>
+      </columns>
+      <includeRegex>.*</includeRegex>
+      <recurse>false</recurse>
+    </branch-list-view>
+  </views>
+  <primaryView>All</primaryView>
+  <disabled>false</disabled>
+  <disabledSubProjects class="hudson.util.PersistedList"/>
+  <syncBranchesTrigger>
+    <spec>H/5 * * * *</spec>
+  </syncBranchesTrigger>
+  <allowAnonymousSync>false</allowAnonymousSync>
+  <scmSource class="jenkins.plugins.git.GitSCMSource" plugin="git@2.4.0">
+    <id>c929c035-8126-460a-94f9-bfdce7bd95f6</id>
+    <remote>https://github.com/bobkubista/examples.git</remote>
+    <credentialsId>85046183-d155-4bb7-b1c6-99f78b6b3d86</credentialsId>
+    <includes>*</includes>
+    <excludes></excludes>
+    <ignoreOnPushNotifications>false</ignoreOnPushNotifications>
+  </scmSource>
+</maven-multi-branch-project>

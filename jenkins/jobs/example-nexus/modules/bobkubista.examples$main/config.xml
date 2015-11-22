@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<maven2 plugin="maven-plugin@2.12.1">
+  <actions/>
+  <keepDependencies>false</keepDependencies>
+  <properties/>
+  <scm class="hudson.scm.NullSCM"/>
+  <canRoam>false</canRoam>
+  <disabled>false</disabled>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <triggers/>
+  <concurrentBuild>false</concurrentBuild>
+  <reporters/>
+  <displayName>main</displayName>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <relativePath></relativePath>
+  <dependencies/>
+  <children>
+    <hudson.maven.ModuleName>
+      <groupId>bobkubista.examples</groupId>
+      <artifactId>build</artifactId>
+    </hudson.maven.ModuleName>
+    <hudson.maven.ModuleName>
+      <groupId>bobkubista.examples</groupId>
+      <artifactId>dependencies</artifactId>
+    </hudson.maven.ModuleName>
+    <hudson.maven.ModuleName>
+      <groupId>bobkubista.examples</groupId>
+      <artifactId>utils</artifactId>
+    </hudson.maven.ModuleName>
+    <hudson.maven.ModuleName>
+      <groupId>bobkubista.examples</groupId>
+      <artifactId>services</artifactId>
+    </hudson.maven.ModuleName>
+    <hudson.maven.ModuleName>
+      <groupId>bobkubista.examples</groupId>
+      <artifactId>webapps</artifactId>
+    </hudson.maven.ModuleName>
+  </children>
+</maven2>
