@@ -3,14 +3,41 @@
   <actions/>
   <description></description>
   <keepDependencies>false</keepDependencies>
-  <properties/>
+  <properties>
+    <jenkins.model.BuildDiscarderProperty>
+      <strategy class="hudson.tasks.LogRotator">
+        <daysToKeep>-1</daysToKeep>
+        <numToKeep>1</numToKeep>
+        <artifactDaysToKeep>-1</artifactDaysToKeep>
+        <artifactNumToKeep>1</artifactNumToKeep>
+      </strategy>
+    </jenkins.model.BuildDiscarderProperty>
+    <com.coravy.hudson.plugins.github.GithubProjectProperty plugin="github@1.14.0">
+      <projectUrl>https://github.com/bobkubista/examples/</projectUrl>
+    </com.coravy.hudson.plugins.github.GithubProjectProperty>
+    <hudson.model.ParametersDefinitionProperty>
+      <parameterDefinitions>
+        <hudson.model.StringParameterDefinition>
+          <name>service</name>
+          <description></description>
+          <defaultValue>user-service</defaultValue>
+        </hudson.model.StringParameterDefinition>
+      </parameterDefinitions>
+    </hudson.model.ParametersDefinitionProperty>
+  </properties>
   <scm class="hudson.scm.NullSCM"/>
   <canRoam>true</canRoam>
   <disabled>false</disabled>
-  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
-  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <blockBuildWhenDownstreamBuilding>true</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>true</blockBuildWhenUpstreamBuilding>
   <triggers/>
   <concurrentBuild>false</concurrentBuild>
+  <customWorkspace>examples</customWorkspace>
+  <rootModule>
+    <groupId>bobkubista.examples</groupId>
+    <artifactId>main</artifactId>
+  </rootModule>
+  <goals>verify</goals>
   <aggregatorStyleBuild>true</aggregatorStyleBuild>
   <incrementalBuild>false</incrementalBuild>
   <ignoreUpstremChanges>false</ignoreUpstremChanges>
@@ -31,10 +58,29 @@
       <factGenerator/>
     </hudson.plugins.chucknorris.CordellWalkerRecorder>
     <hudson.plugins.cigame.GamePublisher plugin="ci-game@1.23"/>
+    <hudson.plugins.deploy.DeployPublisher plugin="deploy@1.10">
+      <adapters>
+        <hudson.plugins.deploy.tomcat.Tomcat7xAdapter>
+          <userName>deployer</userName>
+          <passwordScrambled>ZGVwbG95ZXI=</passwordScrambled>
+          <url>http://192.168.1.103:8080/</url>
+        </hudson.plugins.deploy.tomcat.Tomcat7xAdapter>
+      </adapters>
+      <contextPath>user-service</contextPath>
+      <war>services/**/target/user-service*.war</war>
+      <onFailure>false</onFailure>
+    </hudson.plugins.deploy.DeployPublisher>
   </publishers>
-  <buildWrappers/>
+  <buildWrappers>
+    <hudson.plugins.timestamper.TimestamperBuildWrapper plugin="timestamper@1.7.2"/>
+  </buildWrappers>
   <prebuilders/>
-  <postbuilders/>
+  <postbuilders>
+    <hudson.tasks.Shell>
+      <command>#wget &quot;http://deployer:deployer@192.168.1.103:8080/manager/text/undeploy?path=/user-service&quot; -O - -q
+#wget &quot;http://deployer:deployer@192.168.2.103:8080/manager/text/deploy?path=/user-service&amp;war=file:&lt;path to=&quot;&quot; war=&quot;&quot;&gt;&quot; -O - -q&lt;/path&gt;</command>
+    </hudson.tasks.Shell>
+  </postbuilders>
   <runPostStepsIfResult>
     <name>FAILURE</name>
     <ordinal>2</ordinal>

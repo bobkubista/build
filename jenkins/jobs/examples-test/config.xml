@@ -81,15 +81,6 @@
     <hudson.tasks.test.AggregatedTestResultPublisher plugin="junit@1.9">
       <includeFailedBuilds>false</includeFailedBuilds>
     </hudson.tasks.test.AggregatedTestResultPublisher>
-    <hudson.tasks.BuildTrigger>
-      <childProjects>example-integration-test</childProjects>
-      <threshold>
-        <name>SUCCESS</name>
-        <ordinal>0</ordinal>
-        <color>BLUE</color>
-        <completeBuild>true</completeBuild>
-      </threshold>
-    </hudson.tasks.BuildTrigger>
     <hudson.plugins.emma.EmmaPublisher plugin="emma@1.29">
       <includes>**/target/surefire-reports/*.xml</includes>
       <healthReports>

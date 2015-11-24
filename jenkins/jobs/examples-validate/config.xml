@@ -37,7 +37,7 @@
       <factGenerator/>
     </hudson.plugins.chucknorris.CordellWalkerRecorder>
     <hudson.tasks.BuildTrigger>
-      <childProjects>examples-test</childProjects>
+      <childProjects>examples-test, example-integration-test</childProjects>
       <threshold>
         <name>SUCCESS</name>
         <ordinal>0</ordinal>
