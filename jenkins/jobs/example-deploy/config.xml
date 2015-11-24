@@ -66,8 +66,8 @@
           <url>http://192.168.1.103:8080/</url>
         </hudson.plugins.deploy.tomcat.Tomcat7xAdapter>
       </adapters>
-      <contextPath>user-service</contextPath>
-      <war>services/**/target/user-service*.war</war>
+      <contextPath>${service}</contextPath>
+      <war>services/**/target/${service}*.war</war>
       <onFailure>false</onFailure>
     </hudson.plugins.deploy.DeployPublisher>
   </publishers>
