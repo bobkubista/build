@@ -16,8 +16,11 @@ hs_err_pid*
 target
 *.classpath
 
-**/modules
-**/builds
-**/lastStable
-**/lastSuccesfull
-**/nextBuildNumber
+**/modules/
+**/builds/
+**/lastStable/
+**/lastSuccesfull/
+**/nextBuildNumber/
+**/branches/
+**/template/
+**/sync-branches.log
