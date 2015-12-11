@@ -40,7 +40,7 @@
   <goals>verify</goals>
   <aggregatorStyleBuild>true</aggregatorStyleBuild>
   <incrementalBuild>false</incrementalBuild>
-  <ignoreUpstremChanges>false</ignoreUpstremChanges>
+  <ignoreUpstremChanges>true</ignoreUpstremChanges>
   <archivingDisabled>false</archivingDisabled>
   <siteArchivingDisabled>false</siteArchivingDisabled>
   <fingerprintingDisabled>false</fingerprintingDisabled>
@@ -63,7 +63,7 @@
         <hudson.plugins.deploy.tomcat.Tomcat7xAdapter>
           <userName>deployer</userName>
           <passwordScrambled>ZGVwbG95ZXI=</passwordScrambled>
-          <url>http://192.168.1.103:8080/</url>
+          <url>http://192.168.1.110:8080/</url>
         </hudson.plugins.deploy.tomcat.Tomcat7xAdapter>
       </adapters>
       <contextPath>${service}</contextPath>
