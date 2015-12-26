@@ -17,18 +17,18 @@
   <relativePath>webapps/common-resources</relativePath>
   <dependencies>
     <dependency>
-      <groupId>org.apache.commons</groupId>
-      <artifactId>commons-lang3</artifactId>
-      <version>3.2.1</version>
-      <plugin>false</plugin>
-      <scope>compile</scope>
-      <type>jar</type>
-    </dependency>
-    <dependency>
       <groupId>org.apache.maven.plugins</groupId>
       <artifactId>maven-compiler-plugin</artifactId>
       <version>3.3</version>
       <plugin>true</plugin>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>1.7.13</version>
+      <plugin>false</plugin>
+      <scope>compile</scope>
+      <type>jar</type>
     </dependency>
     <dependency>
       <groupId>bobkubista.examples</groupId>
@@ -37,18 +37,18 @@
       <plugin>false</plugin>
     </dependency>
     <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>slf4j-api</artifactId>
-      <version>1.7.12</version>
-      <plugin>false</plugin>
-      <scope>compile</scope>
-      <type>jar</type>
-    </dependency>
-    <dependency>
       <groupId>org.codehaus.mojo</groupId>
       <artifactId>versions-maven-plugin</artifactId>
       <version>2.2</version>
       <plugin>true</plugin>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
+      <version>3.4</version>
+      <plugin>false</plugin>
+      <scope>compile</scope>
+      <type>jar</type>
     </dependency>
     <dependency>
       <groupId>bobkubista.examples.utils</groupId>
@@ -101,7 +101,7 @@
     <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-log4j12</artifactId>
-      <version>1.7.12</version>
+      <version>1.7.13</version>
       <plugin>false</plugin>
       <scope>compile</scope>
       <type>jar</type>

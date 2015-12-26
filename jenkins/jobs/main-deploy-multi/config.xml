@@ -4,14 +4,6 @@
   <description></description>
   <keepDependencies>false</keepDependencies>
   <properties>
-    <jenkins.model.BuildDiscarderProperty>
-      <strategy class="hudson.tasks.LogRotator">
-        <daysToKeep>-1</daysToKeep>
-        <numToKeep>1</numToKeep>
-        <artifactDaysToKeep>-1</artifactDaysToKeep>
-        <artifactNumToKeep>-1</artifactNumToKeep>
-      </strategy>
-    </jenkins.model.BuildDiscarderProperty>
     <com.coravy.hudson.plugins.github.GithubProjectProperty plugin="github@1.14.0">
       <projectUrl>https://github.com/bobkubista/examples/</projectUrl>
     </com.coravy.hudson.plugins.github.GithubProjectProperty>
@@ -26,35 +18,32 @@
   <customWorkspace>examples</customWorkspace>
   <axes>
     <hudson.matrix.TextAxis>
-      <name>webservice</name>
+      <name>pom</name>
       <values>
-        <string>user-service</string>
-        <string>todo-rest-service</string>
+        <string>services/rest-services/spring-services/user-service/pom.xml</string>
+        <string>services/rest-services/cdi-services/email-cdi-service/pom.xml</string>
+        <string>services/rest-services/spring-services/todo-rest-service/pom.xml</string>
       </values>
     </hudson.matrix.TextAxis>
   </axes>
   <builders>
-    <hudson.tasks.Shell>
-      <command>echo deploying: **/services/rest-services/**/${webservice}/target/${webservice}*.war</command>
-    </hudson.tasks.Shell>
+    <hudson.tasks.Maven>
+      <targets>cargo:undeploy cargo:deploy</targets>
+      <mavenName>Maven</mavenName>
+      <pom>$pom</pom>
+      <usePrivateRepository>false</usePrivateRepository>
+      <settings class="jenkins.mvn.DefaultSettingsProvider"/>
+      <globalSettings class="jenkins.mvn.DefaultGlobalSettingsProvider"/>
+    </hudson.tasks.Maven>
   </builders>
   <publishers>
     <hudson.plugins.chucknorris.CordellWalkerRecorder plugin="chucknorris@0.9.1">
       <factGenerator/>
     </hudson.plugins.chucknorris.CordellWalkerRecorder>
+    <hudson.tasks.test.AggregatedTestResultPublisher plugin="junit@1.10">
+      <includeFailedBuilds>false</includeFailedBuilds>
+    </hudson.tasks.test.AggregatedTestResultPublisher>
     <hudson.plugins.cigame.GamePublisher plugin="ci-game@1.23"/>
-    <hudson.plugins.deploy.DeployPublisher plugin="deploy@1.10">
-      <adapters>
-        <hudson.plugins.deploy.tomcat.Tomcat7xAdapter>
-          <userName>deployer</userName>
-          <passwordScrambled>ZGVwbG95ZXI=</passwordScrambled>
-          <url>http://192.168.1.110/</url>
-        </hudson.plugins.deploy.tomcat.Tomcat7xAdapter>
-      </adapters>
-      <contextPath>${webservice}</contextPath>
-      <war>**/services/rest-services/**/${webservice}/target/${webservice}*.war</war>
-      <onFailure>false</onFailure>
-    </hudson.plugins.deploy.DeployPublisher>
   </publishers>
   <buildWrappers>
     <hudson.plugins.timestamper.TimestamperBuildWrapper plugin="timestamper@1.7.2"/>
@@ -62,4 +51,5 @@
   <executionStrategy class="hudson.matrix.DefaultMatrixExecutionStrategyImpl">
     <runSequentially>true</runSequentially>
   </executionStrategy>
+  <childCustomWorkspace>.</childCustomWorkspace>
 </matrix-project>

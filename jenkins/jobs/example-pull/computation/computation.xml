@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<sync-branches plugin="multi-branch-project-plugin@0.4.1">
+  <actions>
+    <hudson.model.CauseAction>
+      <causes>
+        <hudson.triggers.TimerTrigger_-TimerTriggerCause/>
+      </causes>
+    </hudson.model.CauseAction>
+  </actions>
+  <result>
+    <name>SUCCESS</name>
+    <ordinal>0</ordinal>
+    <color>BLUE</color>
+    <completeBuild>true</completeBuild>
+  </result>
+  <durations>
+    <long>2639</long>
+  </durations>
+  <timestamp>1451125380359</timestamp>
+  <duration>2639</duration>
+</sync-branches>

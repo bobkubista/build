@@ -40,18 +40,9 @@
     <hudson.plugins.chucknorris.CordellWalkerRecorder plugin="chucknorris@0.9.1">
       <factGenerator/>
     </hudson.plugins.chucknorris.CordellWalkerRecorder>
-    <hudson.tasks.test.AggregatedTestResultPublisher plugin="junit@1.9">
+    <hudson.tasks.test.AggregatedTestResultPublisher plugin="junit@1.10">
       <includeFailedBuilds>false</includeFailedBuilds>
     </hudson.tasks.test.AggregatedTestResultPublisher>
-    <hudson.tasks.BuildTrigger>
-      <childProjects>example-nexus</childProjects>
-      <threshold>
-        <name>SUCCESS</name>
-        <ordinal>0</ordinal>
-        <color>BLUE</color>
-        <completeBuild>true</completeBuild>
-      </threshold>
-    </hudson.tasks.BuildTrigger>
     <hudson.plugins.cigame.GamePublisher plugin="ci-game@1.23"/>
   </publishers>
   <buildWrappers>

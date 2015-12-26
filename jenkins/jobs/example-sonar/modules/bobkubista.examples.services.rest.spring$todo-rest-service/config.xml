@@ -25,9 +25,9 @@
       <type>jar</type>
     </dependency>
     <dependency>
-      <groupId>org.apache.commons</groupId>
-      <artifactId>commons-lang3</artifactId>
-      <version>3.2.1</version>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-core</artifactId>
+      <version>4.2.19.Final</version>
       <plugin>false</plugin>
       <scope>compile</scope>
       <type>jar</type>
@@ -40,10 +40,26 @@
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
-      <artifactId>spring-test</artifactId>
-      <version>4.1.6.RELEASE</version>
+      <artifactId>spring-context</artifactId>
+      <version>4.2.3.RELEASE</version>
       <plugin>false</plugin>
-      <scope>test</scope>
+      <scope>compile</scope>
+      <type>jar</type>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>1.7.13</version>
+      <plugin>false</plugin>
+      <scope>compile</scope>
+      <type>jar</type>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-beans</artifactId>
+      <version>4.2.3.RELEASE</version>
+      <plugin>false</plugin>
+      <scope>compile</scope>
       <type>jar</type>
     </dependency>
     <dependency>
@@ -60,14 +76,6 @@
       <version>0.0.1-SNAPSHOT</version>
       <plugin>false</plugin>
       <scope>compile</scope>
-      <type>jar</type>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-orm</artifactId>
-      <version>4.1.6.RELEASE</version>
-      <plugin>false</plugin>
-      <scope>runtime</scope>
       <type>jar</type>
     </dependency>
     <dependency>
@@ -95,18 +103,18 @@
       <type>jar</type>
     </dependency>
     <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-context</artifactId>
-      <version>4.1.6.RELEASE</version>
-      <plugin>false</plugin>
-      <scope>compile</scope>
-      <type>jar</type>
-    </dependency>
-    <dependency>
       <groupId>org.apache.maven.plugins</groupId>
       <artifactId>maven-dependency-plugin</artifactId>
       <version>2.10</version>
       <plugin>true</plugin>
+    </dependency>
+    <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-entitymanager</artifactId>
+      <version>4.2.19.Final</version>
+      <plugin>false</plugin>
+      <scope>compile</scope>
+      <type>jar</type>
     </dependency>
     <dependency>
       <groupId>javax.ws.rs</groupId>
@@ -139,20 +147,10 @@
       <type>jar</type>
     </dependency>
     <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>slf4j-log4j12</artifactId>
-      <version>1.7.12</version>
-      <plugin>false</plugin>
-      <scope>runtime</scope>
-      <type>jar</type>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-beans</artifactId>
-      <version>4.1.6.RELEASE</version>
-      <plugin>false</plugin>
-      <scope>compile</scope>
-      <type>jar</type>
+      <groupId>org.codehaus.cargo</groupId>
+      <artifactId>cargo-maven2-plugin</artifactId>
+      <version>1.4.16</version>
+      <plugin>true</plugin>
     </dependency>
     <dependency>
       <groupId>org.hibernate.javax.persistence</groupId>
@@ -169,14 +167,6 @@
       <plugin>false</plugin>
     </dependency>
     <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>slf4j-api</artifactId>
-      <version>1.7.12</version>
-      <plugin>false</plugin>
-      <scope>compile</scope>
-      <type>jar</type>
-    </dependency>
-    <dependency>
       <groupId>org.codehaus.mojo</groupId>
       <artifactId>versions-maven-plugin</artifactId>
       <version>2.2</version>
@@ -191,9 +181,9 @@
       <type>jar</type>
     </dependency>
     <dependency>
-      <groupId>org.hibernate</groupId>
-      <artifactId>hibernate-core</artifactId>
-      <version>4.3.11.Final</version>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
+      <version>3.4</version>
       <plugin>false</plugin>
       <scope>compile</scope>
       <type>jar</type>
@@ -221,11 +211,11 @@
       <type>jar</type>
     </dependency>
     <dependency>
-      <groupId>org.hibernate</groupId>
-      <artifactId>hibernate-entitymanager</artifactId>
-      <version>4.3.11.Final</version>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-test</artifactId>
+      <version>4.2.3.RELEASE</version>
       <plugin>false</plugin>
-      <scope>compile</scope>
+      <scope>test</scope>
       <type>jar</type>
     </dependency>
     <dependency>
@@ -243,11 +233,27 @@
       <type>jar</type>
     </dependency>
     <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-orm</artifactId>
+      <version>4.2.3.RELEASE</version>
+      <plugin>false</plugin>
+      <scope>runtime</scope>
+      <type>jar</type>
+    </dependency>
+    <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>4.11</version>
       <plugin>false</plugin>
       <scope>test</scope>
+      <type>jar</type>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-log4j12</artifactId>
+      <version>1.7.13</version>
+      <plugin>false</plugin>
+      <scope>runtime</scope>
       <type>jar</type>
     </dependency>
     <dependency>

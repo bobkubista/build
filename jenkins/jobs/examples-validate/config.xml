@@ -45,6 +45,11 @@
         <completeBuild>true</completeBuild>
       </threshold>
     </hudson.tasks.BuildTrigger>
+    <join.JoinTrigger plugin="join@1.16">
+      <joinProjects>example-sonar, example-nexus</joinProjects>
+      <joinPublishers/>
+      <evenIfDownstreamUnstable>false</evenIfDownstreamUnstable>
+    </join.JoinTrigger>
     <hudson.plugins.cigame.GamePublisher plugin="ci-game@1.23"/>
   </publishers>
   <buildWrappers>

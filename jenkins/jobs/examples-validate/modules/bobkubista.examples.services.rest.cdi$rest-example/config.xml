@@ -25,9 +25,9 @@
       <type>jar</type>
     </dependency>
     <dependency>
-      <groupId>org.apache.commons</groupId>
-      <artifactId>commons-lang3</artifactId>
-      <version>3.2.1</version>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-core</artifactId>
+      <version>4.2.19.Final</version>
       <plugin>false</plugin>
       <scope>compile</scope>
       <type>jar</type>
@@ -39,6 +39,14 @@
       <plugin>true</plugin>
     </dependency>
     <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>1.7.13</version>
+      <plugin>false</plugin>
+      <scope>compile</scope>
+      <type>jar</type>
+    </dependency>
+    <dependency>
       <groupId>org.hibernate.javax.persistence</groupId>
       <artifactId>hibernate-jpa-2.0-api</artifactId>
       <version>1.0.1.Final</version>
@@ -47,18 +55,18 @@
       <type>jar</type>
     </dependency>
     <dependency>
+      <groupId>org.glassfish.hk2.external</groupId>
+      <artifactId>javax.inject</artifactId>
+      <version>2.4.0-b34</version>
+      <plugin>false</plugin>
+      <scope>runtime</scope>
+      <type>jar</type>
+    </dependency>
+    <dependency>
       <groupId>bobkubista.examples.services.rest</groupId>
       <artifactId>cdi-services</artifactId>
       <version>0.0.1-SNAPSHOT</version>
       <plugin>false</plugin>
-    </dependency>
-    <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>slf4j-api</artifactId>
-      <version>1.7.12</version>
-      <plugin>false</plugin>
-      <scope>compile</scope>
-      <type>jar</type>
     </dependency>
     <dependency>
       <groupId>org.postgresql</groupId>
@@ -75,17 +83,9 @@
       <plugin>true</plugin>
     </dependency>
     <dependency>
-      <groupId>org.glassfish.hk2.external</groupId>
-      <artifactId>javax.inject</artifactId>
-      <version>2.4.0-b31</version>
-      <plugin>false</plugin>
-      <scope>runtime</scope>
-      <type>jar</type>
-    </dependency>
-    <dependency>
-      <groupId>org.hibernate</groupId>
-      <artifactId>hibernate-core</artifactId>
-      <version>4.3.11.Final</version>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
+      <version>3.4</version>
       <plugin>false</plugin>
       <scope>compile</scope>
       <type>jar</type>
@@ -119,6 +119,14 @@
       <type>jar</type>
     </dependency>
     <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-entitymanager</artifactId>
+      <version>4.2.19.Final</version>
+      <plugin>false</plugin>
+      <scope>compile</scope>
+      <type>jar</type>
+    </dependency>
+    <dependency>
       <groupId>javax.ws.rs</groupId>
       <artifactId>javax.ws.rs-api</artifactId>
       <version>2.0.1</version>
@@ -141,14 +149,6 @@
       <plugin>true</plugin>
     </dependency>
     <dependency>
-      <groupId>org.hibernate</groupId>
-      <artifactId>hibernate-entitymanager</artifactId>
-      <version>4.3.11.Final</version>
-      <plugin>false</plugin>
-      <scope>compile</scope>
-      <type>jar</type>
-    </dependency>
-    <dependency>
       <groupId>org.apache.maven.plugins</groupId>
       <artifactId>maven-surefire-report-plugin</artifactId>
       <version>2.18.1</version>
@@ -165,7 +165,7 @@
     <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-log4j12</artifactId>
-      <version>1.7.12</version>
+      <version>1.7.13</version>
       <plugin>false</plugin>
       <scope>runtime</scope>
       <type>jar</type>

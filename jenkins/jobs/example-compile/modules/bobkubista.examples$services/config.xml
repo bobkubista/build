@@ -29,18 +29,18 @@
       <plugin>true</plugin>
     </dependency>
     <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>1.7.13</version>
+      <plugin>false</plugin>
+      <scope>compile</scope>
+      <type>jar</type>
+    </dependency>
+    <dependency>
       <groupId>bobkubista.examples</groupId>
       <artifactId>build</artifactId>
       <version>0.0.1-SNAPSHOT</version>
       <plugin>false</plugin>
-    </dependency>
-    <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>slf4j-api</artifactId>
-      <version>1.7.12</version>
-      <plugin>false</plugin>
-      <scope>compile</scope>
-      <type>jar</type>
     </dependency>
     <dependency>
       <groupId>org.codehaus.mojo</groupId>
@@ -91,7 +91,7 @@
     <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-log4j12</artifactId>
-      <version>1.7.12</version>
+      <version>1.7.13</version>
       <plugin>false</plugin>
       <scope>runtime</scope>
       <type>jar</type>

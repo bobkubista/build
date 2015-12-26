@@ -1,8 +1,20 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<maven-multi-branch-project plugin="multi-branch-project-plugin@0.3">
+<maven-multi-branch-project plugin="multi-branch-project-plugin@0.4.1">
   <actions/>
   <description></description>
-  <views class="java.util.concurrent.CopyOnWriteArrayList">
+  <properties>
+    <com.cloudbees.hudson.plugins.folder.properties.FolderCredentialsProvider_-FolderCredentialsProperty plugin="cloudbees-folder@5.1">
+      <domainCredentialsMap class="hudson.util.CopyOnWriteMap$Hash">
+        <entry>
+          <com.cloudbees.plugins.credentials.domains.Domain plugin="credentials@1.24">
+            <specifications/>
+          </com.cloudbees.plugins.credentials.domains.Domain>
+          <java.util.concurrent.CopyOnWriteArrayList/>
+        </entry>
+      </domainCredentialsMap>
+    </com.cloudbees.hudson.plugins.folder.properties.FolderCredentialsProvider_-FolderCredentialsProperty>
+  </properties>
+  <views>
     <branch-list-view>
       <owner class="maven-multi-branch-project" reference="../../.."/>
       <name>All</name>
@@ -27,13 +39,30 @@
       <recurse>false</recurse>
     </branch-list-view>
   </views>
+  <viewsTabBar class="hudson.views.DefaultViewsTabBar"/>
   <primaryView>All</primaryView>
+  <healthMetrics>
+    <com.cloudbees.hudson.plugins.folder.health.WorstChildHealthMetric plugin="cloudbees-folder@5.1"/>
+  </healthMetrics>
+  <icon class="com.cloudbees.hudson.plugins.folder.icons.StockFolderIcon" plugin="cloudbees-folder@5.1"/>
+  <orphanedItemStrategy class="com.cloudbees.hudson.plugins.folder.computed.DefaultOrphanedItemStrategy" plugin="cloudbees-folder@5.1">
+    <pruneDeadBranches>true</pruneDeadBranches>
+    <daysToKeep>0</daysToKeep>
+    <numToKeep>0</numToKeep>
+  </orphanedItemStrategy>
+  <triggers>
+    <hudson.triggers.TimerTrigger>
+      <spec>H/5 * * * *</spec>
+    </hudson.triggers.TimerTrigger>
+    <org.jvnet.hudson.plugins.mavendepsupdate.MavenDependencyUpdateTrigger plugin="maven-dependency-update-trigger@1.5">
+      <spec>H/5 * * * *</spec>
+      <checkPlugins>false</checkPlugins>
+    </org.jvnet.hudson.plugins.mavendepsupdate.MavenDependencyUpdateTrigger>
+  </triggers>
   <disabled>false</disabled>
-  <disabledSubProjects class="hudson.util.PersistedList"/>
-  <syncBranchesTrigger>
-    <spec>H/5 * * * *</spec>
-  </syncBranchesTrigger>
+  <disabledSubProjects/>
   <allowAnonymousSync>false</allowAnonymousSync>
+  <suppressTriggerNewBranchBuild>false</suppressTriggerNewBranchBuild>
   <scmSource class="jenkins.plugins.git.GitSCMSource" plugin="git@2.4.0">
     <id>c929c035-8126-460a-94f9-bfdce7bd95f6</id>
     <remote>https://github.com/bobkubista/examples.git</remote>
