@@ -63,7 +63,7 @@
   <disabledSubProjects/>
   <allowAnonymousSync>false</allowAnonymousSync>
   <suppressTriggerNewBranchBuild>false</suppressTriggerNewBranchBuild>
-  <scmSource class="jenkins.plugins.git.GitSCMSource" plugin="git@2.4.0">
+  <scmSource class="jenkins.plugins.git.GitSCMSource" plugin="git@2.4.2">
     <id>c929c035-8126-460a-94f9-bfdce7bd95f6</id>
     <remote>https://github.com/bobkubista/examples.git</remote>
     <credentialsId>85046183-d155-4bb7-b1c6-99f78b6b3d86</credentialsId>
